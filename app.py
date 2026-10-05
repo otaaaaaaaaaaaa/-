@@ -1,8 +1,3 @@
-@app.post("/callback")
-async def callback(request: Request):
-    return "OK"
-
-
 import csv
 import random
 from datetime import datetime
@@ -13,9 +8,14 @@ from database import init_db, get_connection
 
 app = FastAPI()
 
+@app.post("/callback")
+async def callback(request: Request):
+    return "OK"
+
 init_db()
 
 questions = []
+
 
 with open("questions.csv", encoding="utf-8") as f:
     reader = csv.DictReader(f)

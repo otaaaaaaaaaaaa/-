@@ -1,3 +1,8 @@
+@app.post("/callback")
+async def callback(request: Request):
+    return "OK"
+
+
 import csv
 import random
 from datetime import datetime
